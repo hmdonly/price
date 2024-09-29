@@ -1,0 +1,74 @@
+{
+	"info": {
+		"_postman_id": "22664cd3-b45d-4758-9cf4-8bce22ee55ec",
+		"name": "Discount calculation",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37200119"
+	},
+	"item": [
+		{
+			"name": "Discount Calculation",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTcyNzYzMzk5NywiaWF0IjoxNzI3NjMwMzk3fQ.804qfe_HbWDUjv_b0Ju3z6nWXe0TLLssbGMulu0LMPk",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"items\": [\r\n        {\r\n            \"id\": 1,\r\n            \"itemName\": \"Laptop\",\r\n            \"category\": \"NORMAL\",\r\n            \"totalAmount\": 1200.00\r\n        },\r\n        {\r\n            \"id\": 2,\r\n            \"itemName\": \"Groceries\",\r\n            \"category\": \"GROCERY\",\r\n            \"totalAmount\": 150.00\r\n        },\r\n        {\r\n            \"id\": 3,\r\n            \"itemName\": \"Headphones\",\r\n            \"category\": \"NORMAL\",\r\n            \"totalAmount\": 300.00\r\n        }\r\n    ],\r\n    \"userDto\": {\r\n        \"userId\": \"user123\",\r\n        \"userType\": \"AFFILIATE\",\r\n        \"customerTenure\": 30 // in months\r\n    },\r\n    \"totalAmount\": 1650.00, // Total amount of all items combined\r\n    \"originalCurrency\": \"ORIGINAL\",\r\n    \"targetCurrency\": \"TARGET\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8087/api/calculate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8087",
+					"path": [
+						"api",
+						"calculate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login Api",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"admin\",\r\n    \"password\":\"password\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8087/api/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8087",
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
